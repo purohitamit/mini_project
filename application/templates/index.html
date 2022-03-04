@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+{% block body %}
+<h2 style="color: blue; text-align: center;">Croydon Library Centre</h2>
+
+<hr>
+<span style="color:red">
+<marquee width="100%" direction="left" height="50px">
+<h2>&#128151;&#128151;Welcome to your library. Wish you a very good day &#128151;&#128151;</h2></marquee>
+<br><br>
+        
+        {% for book in books %}
+        
+   
+        {{ book.id.__str__() + " " + book.__str__() + " " + book.author.__str__() }} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<!-- <a href="{{ url_for('update', id=book.id) }}">Update Book</a> -->
+        <button type=button onclick="window.location.href='{{ url_for('update', id=book.id) }}'">Update Book </button>
+        <button type=button onclick="window.location.href='{{ url_for('delete', i=book.id) }}'">Delete Book </button>
+        <br>
+        {% endfor %}
+{% endblock body %}
