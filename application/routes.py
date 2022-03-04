@@ -8,8 +8,15 @@ def home():
     books = Book.query.all()
     return render_template('index.html', books = books)
 
-@app.route('/search=<keyword>')
-def search(keyword):
+@app.route('/search/book=<keyword>')
+def search_book(keyword):
+    data = db.session.execute(f"SELECT * FROM Book WHERE title LIKE '%{keyword}%'")
+    data = list(data)
+    num_results = len(data)
+    return render_template('search.html', res = [str(res) for res in data], n = num_results)
+
+@app.route('/search/author=<keyword>')
+def search_author(keyword):
     data = db.session.execute(f"SELECT * FROM Author WHERE author_name LIKE '%{keyword}%'")
     data = list(data)
     num_results = len(data)
@@ -70,10 +77,11 @@ def update(id):
         return redirect(url_for('home'))
     return render_template('book_form.html', form = form, ptitle = "Update Book")
 
-@app.route('/delete/<int:i>')
-def delete(i):
+@app.route('/delete/book/<int:i>')
+def delete_book(i):
     book = Book.query.get(i)
     db.session.delete(book)
     db.session.commit()
     return redirect(url_for('home'))
+
 
