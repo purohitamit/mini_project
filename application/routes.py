@@ -77,10 +77,11 @@ def update(id):
         return redirect(url_for('home'))
     return render_template('book_form.html', form = form, ptitle = "Update Book")
 
-@app.route('/delete/<int:i>')
-def delete(i):
+@app.route('/delete/book/<int:i>')
+def delete_book(i):
     book = Book.query.get(i)
     db.session.delete(book)
     db.session.commit()
     return redirect(url_for('home'))
+
 
