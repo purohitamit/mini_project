@@ -43,9 +43,6 @@ def add_book():
     form = BookForm()
     form.author_id.choices.extend([(author.id, str(author)) for author in authors])
     if request.method == 'POST':
-        if not form.validate_on_submit():
-            message = "Book name cannot be blank"
-            return render_template('book_form.html', form = form, ptitle = "Add Book", message = message)
         title = form.title.data
         price = form.price.data
         publish_date = form.publish_date.data
@@ -79,3 +76,4 @@ def delete(i):
     db.session.delete(book)
     db.session.commit()
     return redirect(url_for('home'))
+
