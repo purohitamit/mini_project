@@ -52,21 +52,10 @@ class TestAddBook(TestBase):
         response = self.client.get(url_for('update', id=1))
         self.assert200(response)
         self.assertIn(b'Book title', response.data)
-    
-    def test_search_get(self):
-        response = self.client.get(url_for('search_book', keyword="keyword"))
-        self.assert200(response)
-    
-    def test_search_author_get(self):
-        response = self.client.get(url_for('search_author', keyword="keyword"))
-        self.assert200(response)
-        
 
-
-   
 class TestDelete(TestBase):
     def test_delete_book(self):
-        response = self.client.get(url_for("delete_book", i=1), follow_redirects=True)
+        response = self.client.get(url_for("delete", i=1), follow_redirects=True)
         self.assertNotIn(b"Run unit test", response.data)
 
 class TestAddAuthor(TestBase):
