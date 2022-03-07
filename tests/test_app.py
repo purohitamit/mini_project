@@ -55,7 +55,7 @@ class TestAddBook(TestBase):
 
 class TestDelete(TestBase):
     def test_delete_book(self):
-        response = self.client.get(url_for("delete", i=1), follow_redirects=True)
+        response = self.client.get(url_for("delete_book", i=1), follow_redirects=True)
         self.assertNotIn(b"Run unit test", response.data)
 
 class TestAddAuthor(TestBase):

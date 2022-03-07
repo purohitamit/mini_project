@@ -24,18 +24,8 @@ def search_author(keyword):
 
 @app.route('/add/author', methods=['GET', 'POST'])
 def add_author():
-    #message = None
     form = AuthorForm()
     if request.method == 'POST':
-        # if not form.validate_on_submit():
-        #     message = ""
-        #     for field in ['name', 'due']:
-        #         try:
-        #             err = eval(f"form.{field}.errors[-1]")
-        #         except IndexError:
-        #             err = ""
-        #         message += err + ", "
-        #     return render_template('add_proj.html', form = form, message = message)
         name = form.name.data
         new_author= Author(author_name = name)
         db.session.add(new_author)
@@ -77,8 +67,8 @@ def update(id):
         return redirect(url_for('home'))
     return render_template('book_form.html', form = form, ptitle = "Update Book")
 
-@app.route('/delete/<int:i>')
-def delete(i):
+@app.route('/delete/book/<int:i>')
+def delete_book(i):
     book = Book.query.get(i)
     db.session.delete(book)
     db.session.commit()
