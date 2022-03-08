@@ -79,3 +79,15 @@ def delete_book(i):
     db.session.commit()
     return redirect(url_for('home'))
 
+@app.route('/delete/author/<int:i>')
+def delete_author(i):
+    books = Book.query.filter_by(author_id = i).all()
+    for book in books:
+        db.session.delete(book)
+        db.session.commit()
+
+    author = Author.query.get(i)
+    db.session.delete(author)
+    db.session.commit()
+    return redirect(url_for('author'))
+
