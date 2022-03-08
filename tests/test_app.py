@@ -73,6 +73,10 @@ class TestDelete(TestBase):
         response = self.client.get(url_for("delete_book", i=1), follow_redirects=True)
         self.assertNotIn(b"Run unit test", response.data)
 
+class TestDeleteAuthor(TestBase):
+    def test_delete_author(self):
+        response = self.client.get(url_for("delete_author", i=1), follow_redirects=True)
+        self.assertNotIn(b"Run unit test", response.data)
     
 
 class TestAddAuthor(TestBase):
@@ -80,6 +84,8 @@ class TestAddAuthor(TestBase):
         response = self.client.get(url_for('add_author'))
         self.assert200(response)
         self.assertIn(b'name', response.data)
+
+        
     def test_add_author_post(self):
         response = self.client.post(
             url_for('add_author'),
