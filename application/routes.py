@@ -8,6 +8,11 @@ def home():
     books = Book.query.all()
     return render_template('index.html', books = books)
 
+@app.route('/author')
+def author():
+    authors = Author.query.all()
+    return render_template('index2.html', authors = authors)
+
 @app.route('/search/book=<keyword>')
 def search_book(keyword):
     data = db.session.execute(f"SELECT * FROM Book WHERE title LIKE '%{keyword}%'")
