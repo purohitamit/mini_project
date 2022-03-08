@@ -33,6 +33,12 @@ class TestHome(TestBase):
         self.assert200(response)
         self.assertIn(b'Sample Book', response.data)
 
+class TestAuthor(TestBase):
+    def test_author_get(self):
+        response = self.client.get(url_for('author'))
+        self.assert200(response)
+        self.assertIn(b'Sample Author', response.data)
+
 class TestAddBook(TestBase):
     def test_add_get(self):
         response = self.client.get(url_for('add_book'))
@@ -52,11 +58,22 @@ class TestAddBook(TestBase):
         response = self.client.get(url_for('update', id=1))
         self.assert200(response)
         self.assertIn(b'Book title', response.data)
+    
+class TestSearch(TestBase):
+    def test_search_get(self):
+        response = self.client.get(url_for('search_book', keyword="keyword"))
+        self.assert200(response)
+
+    def test_search_author_get(self):
+        response = self.client.get(url_for('search_author', keyword="keyword"))
+        self.assert200(response)
 
 class TestDelete(TestBase):
     def test_delete_book(self):
         response = self.client.get(url_for("delete_book", i=1), follow_redirects=True)
         self.assertNotIn(b"Run unit test", response.data)
+
+    
 
 class TestAddAuthor(TestBase):
     def test_add_author_get(self):

@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+{% block body %}
+<h2 style="color: blue; text-align: center;">Croydon Library Centre</h2>
+
+<hr>
+<span style="color:red">
+<marquee width="100%" direction="left" height="50px">
+<h2>&#128151;&#128151;Welcome to your library. Wish you a very good day &#128151;&#128151;</h2></marquee>
+<br><br>
+        
+        {% for author in authors %}
+        
+   
+        {{ author.id.__str__() + " " + author.__str__() }}
+        <br> 
+        {% endfor %}
+{% endblock body %}
