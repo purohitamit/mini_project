@@ -22,7 +22,12 @@ Jenkins was used as a build server, providing automation of building and testing
 Test cases were run both in Visual studio code and by Jenkins automated free style job via a webhook and achieved a 100% coverage with a 100% pass.
 ![img4](https://user-images.githubusercontent.com/87416941/157241997-9758e88a-cd66-404d-b16d-54496e0a7e0c.PNG)  
 ![img5](https://user-images.githubusercontent.com/87416941/157242032-7d241cf0-8e39-4ea3-9abe-849b9f41dc91.PNG)  
-![img6](https://user-images.githubusercontent.com/87416941/157242090-266e6963-4c8b-4af6-a678-596e61281fd5.PNG)
+![img6](https://user-images.githubusercontent.com/87416941/157242090-266e6963-4c8b-4af6-a678-596e61281fd5.PNG)  
+As a stretch goal for the project, I also used Jenkins to depoly the app on another server.  
+![another_server](https://user-images.githubusercontent.com/87416941/157431544-63f66ed4-789e-48f0-a6cd-80010ea53e1d.PNG)
+![Jenkins_server](https://user-images.githubusercontent.com/87416941/157431642-77065f4c-9755-4399-b21d-b56db2655e77.PNG)
+
+
 
 
 
