@@ -1,11 +1,11 @@
 # mini_project
-** Project Objective: **
+Project Objective: 
 The objective of this project is to create a web app using flask micro framework and to implement the CRUD (Create, Read, Update and Delete) functionality. The information is stored in the MySQL database which comprises to two tables with one to many relationship.  
 ![design](https://user-images.githubusercontent.com/87416941/157236242-2422fb12-6552-4a13-a58d-159110a81867.png)  
-** Entity Relation Diagram **  
+Entity Relation Diagram   
 I used two tables to store data name Author and Book with id as the Primary Key in both the tables and author_id as the Foreign Key in the Book table.  
 ![erd](https://user-images.githubusercontent.com/87416941/157238303-01548447-e7b5-4a6e-98d5-14449e470c54.PNG)  
-** Project Tracking **  
+Project Tracking  
 I used git for the version control and as the repository was hosted on Github,  I used it's Project feature for the project tracking. The whole project was broken down into 6 tasks so 6 issues were created. Every time the task was completed and was pushed to github repo, the issue was automatically closed which was linked to the project. Below are the pictures taken at the start and after completing all the tasks.  
 ![Projects](https://user-images.githubusercontent.com/87416941/157239702-ca831326-8eed-4c31-8ea5-70b3141c3cd5.PNG)  
 ![projectboard](https://user-images.githubusercontent.com/87416941/157240397-57d526e3-376e-468d-a567-fd86550f8295.PNG)  
@@ -22,7 +22,15 @@ Jenkins was used as a build server, providing automation of building and testing
 Test cases were run both in Visual studio code and by Jenkins automated free style job via a webhook and achieved a 100% coverage with a 100% pass.
 ![img4](https://user-images.githubusercontent.com/87416941/157241997-9758e88a-cd66-404d-b16d-54496e0a7e0c.PNG)  
 ![img5](https://user-images.githubusercontent.com/87416941/157242032-7d241cf0-8e39-4ea3-9abe-849b9f41dc91.PNG)  
-![img6](https://user-images.githubusercontent.com/87416941/157242090-266e6963-4c8b-4af6-a678-596e61281fd5.PNG)
+![img6](https://user-images.githubusercontent.com/87416941/157242090-266e6963-4c8b-4af6-a678-596e61281fd5.PNG)  
+As a stretch goal for the project, I also used Jenkins to depoly the app on another server ans run the app in the browser as per below:  
+![another_server](https://user-images.githubusercontent.com/87416941/157431544-63f66ed4-789e-48f0-a6cd-80010ea53e1d.PNG)
+![Jenkins_server](https://user-images.githubusercontent.com/87416941/157431642-77065f4c-9755-4399-b21d-b56db2655e77.PNG)
+![new_server](https://user-images.githubusercontent.com/87416941/157431953-cc55f831-9884-4970-9041-065d03e170c2.PNG)  
+                  
+
+
+
 
 
 
