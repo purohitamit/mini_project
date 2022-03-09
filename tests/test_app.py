@@ -71,12 +71,14 @@ class TestSearch(TestBase):
 class TestDelete(TestBase):
     def test_delete_book(self):
         response = self.client.get(url_for("delete_book", i=1), follow_redirects=True)
-        self.assertNotIn(b"Run unit test", response.data)
+        self.assert200(response)
+        self.assertNotIn(b"Sample Book", response.data)
 
 class TestDeleteAuthor(TestBase):
     def test_delete_author(self):
         response = self.client.get(url_for("delete_author", i=1), follow_redirects=True)
-        self.assertNotIn(b"Run unit test", response.data)
+        self.assert200(response)
+        self.assertNotIn(b"Sample Author", response.data)
     
 
 class TestAddAuthor(TestBase):
