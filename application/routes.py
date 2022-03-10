@@ -15,14 +15,14 @@ def author():
 
 @app.route('/search/book=<keyword>')
 def search_book(keyword):
-    data = db.session.execute(f"SELECT * FROM Book WHERE title LIKE '%{keyword}%'")
+    data = db.session.execute(f"SELECT * FROM book WHERE title LIKE '%{keyword}%'")
     data = list(data)
     num_results = len(data)
     return render_template('search.html', res = [str(res) for res in data], n = num_results)
 
 @app.route('/search/author=<keyword>')
 def search_author(keyword):
-    data = db.session.execute(f"SELECT * FROM Author WHERE author_name LIKE '%{keyword}%'")
+    data = db.session.execute(f"SELECT * FROM author WHERE author_name LIKE '%{keyword}%'")
     data = list(data)
     num_results = len(data)
     return render_template('search.html', res = [str(res) for res in data], n = num_results)
